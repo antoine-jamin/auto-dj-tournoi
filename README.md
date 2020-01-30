@@ -12,3 +12,4 @@ Son fonctionnement est le suivant:
 Les musiques que nous utilisons (non fournies) inclues les coups de sifflet annonçant le début ou la fin de la rencontre.
 La musique de début annonce le début d'un match et se termine par 1 coup de sifflet.
 La musique de fin annonce les 50 dernières secondes de la rencontre et se termine par 3 coups de sifflet.
+La musique jouée pendant le tournoi est mise en pause lorsque les musiques de début et de fin sont jouées.
