@@ -67,7 +67,7 @@ def KeyNextMusic(event):
 # Partie Graphique
 if __name__ == "__main__":
     win = Tk()
-    win.title("Auto-Dj : Night-Handball")
+    win.title("Auto-Dj")
     title = Label(win, text="Auto-Dj : Night-Handball",font=("", 40), fg="blue", bg=bgcolor)
     title.pack(pady=10)
     txt = Label(win, text="Duree des matchs :", font=("", 26), bg=bgcolor)
