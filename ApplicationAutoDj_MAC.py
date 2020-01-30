@@ -10,9 +10,9 @@ import time
 
 # Variables globales
 bgcolor = 'white' # couleur de fond
-sonDebut = "debutdematch.mp3" # musique de début de match
+sonDebut = "debutdematch.mp3" # musique de dÃ©but de match
 sonFin = "fin de match.mp3"     # musique de fin de match
-tempsFin = 50.0 # Durée de la musique de fin
+tempsFin = 50.0 # DurÃ©e de la musique de fin
 
 application_musique = "Spotify" # "iTunes" ou "Spotify"
 # application_musique = "iTunes"
@@ -25,7 +25,7 @@ appMusic = appscript.app(application_musique)
 def Start():
     PlayMusicDeb()
     temps = float(SboxMin.get())*60+float(SboxSec.get())
-    #Enlève le temps de fin
+    #EnlÃ¨ve le temps de fin
     temps=temps-tempsFin
     print('Il reste ' + str(int(temps/60)) + '\'' +str(int(temps%60))+'\'\' avant la musique de fin')
     while(temps!=0):
@@ -47,7 +47,7 @@ def Pause():
         appMusic.pause()
 
 def PlayMusicDeb():
-    print("\nMusique de début\n")
+    print("\nMusique de dÃ©but\n")
     Pause()
     subprocess.call(["afplay", sonDebut])
     Play()
@@ -73,10 +73,10 @@ def PlayTest(event):
 # Partie Graphique
 if __name__ == "__main__":
     win = Tk()
-    win.title("Auto-Dj : Night-Handball")
+    win.title("Auto-Dj")
     title = Label(win, text="Auto-Dj : Night-Handball",font=("", 40), fg="blue", bg=bgcolor)
     title.pack(pady=10)
-    txt = Label(win, text="Durée des matchs :", font=("", 26), bg=bgcolor)
+    txt = Label(win, text="DurÃ©e des matchs :", font=("", 26), bg=bgcolor)
     txt.pack(pady=2)
     frame1=Frame(win, bg=bgcolor)
     frame1.pack(pady=1)
@@ -95,16 +95,16 @@ if __name__ == "__main__":
     frame3.pack(pady=20)
 
     Button(frame3, text="Start", command=Start).pack(side=LEFT, padx=10)
-    Button(frame3, text="Musique de début", command=PlayMusicDeb).pack(side=LEFT, padx=10)
+    Button(frame3, text="Musique de dÃ©but", command=PlayMusicDeb).pack(side=LEFT, padx=10)
     Button(frame3, text="Musique de fin", command=PlayMusicFin).pack(side=LEFT, padx=10)
 
     frame4 = Frame(win, bg=bgcolor)
     frame4.pack(pady=2)
     Label(frame4, text="------").pack(pady=10)
     Label(frame4, text="espace : START | ").pack(side=LEFT,pady=2)
-    Label(frame4, text="F1 : Musique de début | ").pack(side=LEFT,pady=2)
+    Label(frame4, text="F1 : Musique de dÃ©but | ").pack(side=LEFT,pady=2)
     Label(frame4,text="F10 : Musique de fin | ").pack(side=LEFT,pady=2)
-    Label(frame4,text="Entrée : Chanson suivante").pack(side=LEFT,pady=2)
+    Label(frame4,text="EntrÃ©e : Chanson suivante").pack(side=LEFT,pady=2)
 
     attente= Entry(win)
     attente.insert(0,"zone d'attente curseur")
