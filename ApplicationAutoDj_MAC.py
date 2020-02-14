@@ -67,8 +67,12 @@ def KeyPlayMusicFin(event):
 def KeyNextMusic(event):
     if appMusic.isrunning():
         appMusic.next_track()
-def PlayTest(event):
+
+def KeyPlay(event):
     Play()
+
+def KeyPause(event):
+    Pause()
 
 # Partie Graphique
 if __name__ == "__main__":
@@ -105,6 +109,11 @@ if __name__ == "__main__":
     Label(frame4, text="F1 : Musique de début | ").pack(side=LEFT,pady=2)
     Label(frame4,text="F10 : Musique de fin | ").pack(side=LEFT,pady=2)
     Label(frame4,text="Entrée : Chanson suivante").pack(side=LEFT,pady=2)
+    
+    frame5 = Frame(win, bg=bgcolor)
+    frame5.pack(pady=2)
+    Label(frame5, text="a : Play | ").pack(side=LEFT, pady=2)
+    Label(frame5, text="o : Pause").pack(side=LEFT, pady=2)
 
     attente= Entry(win)
     attente.insert(0,"zone d'attente curseur")
@@ -114,6 +123,8 @@ if __name__ == "__main__":
     win.bind("<F1>",KeyPlayMusicDeb)
     win.bind("<F10>",KeyPlayMusicFin)
     win.bind("<Return>",KeyNextMusic)
-
+    win.bind("a", KeyPlay)
+    win.bind("o", KeyPause)
+    
     win.mainloop()
 
